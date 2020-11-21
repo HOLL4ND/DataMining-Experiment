@@ -103,7 +103,7 @@ for row in dupIndex:
 df = df.drop_duplicates(subset=['ID'],keep='first')           #去除ID相同的行
 df = df.reset_index(drop=True)
 
-# print(df)
+# print(df) #最终合并的dataframe
 df.to_csv('./resources/Exp01/MergeData.csv',index=False)
 print("done")
 
