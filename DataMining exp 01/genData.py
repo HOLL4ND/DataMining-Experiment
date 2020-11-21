@@ -1,11 +1,11 @@
 
 # * 该程序用于向mysql中生成100条学生数据
 
-from random import randint
-from pypinyin import pinyin, lazy_pinyin, Style
-import pymysql.cursors
 import random
+from random import randint
 
+import pymysql.cursors
+from pypinyin import Style, lazy_pinyin, pinyin
 
 txtpath ="./DM exm/resources/CFname.txt"
 familyName = [] # 姓氏拼音列表
