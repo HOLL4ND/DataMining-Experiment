@@ -48,7 +48,7 @@ def tpToPer(df):
 converters={'Gender':lambda x:gen(x),'Height':lambda x: height(x),'Constitution':lambda x:conChange(x)}
 
 #-----------------df1----------------------
-df1 = pd.read_table('./DM exm/resources/Exp01/01dataSource.txt',sep=',',converters=converters)
+df1 = pd.read_table('./resources/Exp01/01dataSource.txt',sep=',',converters=converters)
 
 tpToPer(df1)
 
@@ -61,7 +61,7 @@ df1 = df1.reset_index(drop=True)                #去除后重设打乱的index
 
 
 #-----------------df2----------------------
-df2 = pd.read_excel('./DM exm/resources/Exp01/01dataSource.xlsx',converters=converters)
+df2 = pd.read_excel('./resources/Exp01/01dataSource.xlsx',converters=converters)
 
 def compID(id):
     x=int(id)
@@ -104,5 +104,5 @@ df = df.drop_duplicates(subset=['ID'],keep='first')           #去除ID相同的
 df = df.reset_index(drop=True)
 
 # print(df)
-df.to_excel('output.xlsx',index=False)
+df.to_csv('./resources/Exp01/MergeData.csv',index=False)
 print("done")
