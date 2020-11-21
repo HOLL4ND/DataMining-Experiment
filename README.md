@@ -9,5 +9,5 @@
 
 ## 小组成员
 
-[![](https://github.com/Lier9527.png?size=50)](https://github.com/Lier9527)
+[林昊蓝](https://github.com/HOLL4ND)	[罗乾杰](https://github.com/Lier9527)	[李志鹏](https://github.com/LIMU-c)
 
