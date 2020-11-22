@@ -1,7 +1,7 @@
 from numpy.core.defchararray import index
 import pandas as pd
 import numpy as np
-pd.set_option('display.max_rows',None)
+# pd.set_option('display.max_rows',None)
 
 def gen(gender):
     if gender=='boy':
@@ -28,8 +28,8 @@ def conChange(consti):
         return 70
     elif consti == 'bad':
         return 60
-    else:
-        return consti
+    elif consti=='':
+        return np.NaN
 
 def TenTimes(score):
     if score=='':
@@ -45,20 +45,64 @@ def tpToPer(df):
     df['C10']=df['C10'].apply(TenTimes)
 
 
+def dupMerge(dataframe):
+
+    df=dataframe
+
+    #根据ID排序
+    df.sort_values('ID',inplace=True)   
+
+    #去除完全重复的行
+    df = df.drop_duplicates(keep='first')               #去除完全相同的   
+
+    #重设index
+    df = df.reset_index(drop=True)      
+
+    #定位'ID'重复的位置，位置存入 dupStartList=>List
+    idcol = df['ID']
+    oneDup = idcol.drop_duplicates(keep='first')
+    notDup = idcol.drop_duplicates(keep=False)
+    dupStart=oneDup.append(notDup).drop_duplicates(keep=False)
+
+    #所有重复数据的起始处保存为列表List
+    dupStartList = dupStart.index.tolist()
+    
+    #取列数 
+    col = df.shape[1]  
+
+    #处理'ID'重复的数据
+    for row in dupStartList:
+        dupStart = opFlag = row
+        dupEnd = row
+        #找到重复区间，dupEnd为重复结束index
+        while df.iloc[dupEnd,0] == df.iloc[dupEnd+1,0]:
+            dupEnd=dupEnd+1
+        #如果出现空值，则向下查找非空值
+        for c in range(col):
+            if pd.isna(df.iloc[dupStart,c]):
+                while dupEnd - opFlag > 0:
+                    opFlag = opFlag + 1
+                    if not pd.isna(df.iloc[opFlag,c]):
+                        df.iloc[dupStart,c] = int(df.iloc[opFlag,c])
+                        break
+
+    #处理结束后，去除其他重复行
+    df = df.drop_duplicates(subset=['ID'],keep='first')
+
+    #重设index
+    df = df.reset_index(drop=True)      
+
+    return df
+
 converters={'Gender':lambda x:gen(x),'Height':lambda x: height(x),'Constitution':lambda x:conChange(x)}
 
+
 #-----------------df1----------------------
-df1 = pd.read_table('./resources/Exp01/01dataSource.txt',sep=',',converters=converters)
+df1 = pd.read_table('./resources/Exp01/01dataSourcecp.txt',sep=',',converters=converters)
 
 tpToPer(df1)
 
-df1 = df1.drop_duplicates(keep='first')               #去除完全相同的
-df1 = df1.drop_duplicates(subset=['ID'],keep='first') #暴力去重，ID重复则只保留第一个
-df1.sort_values('ID',inplace=True)
-df1 = df1.reset_index(drop=True)                #去除后重设打乱的index
-
-# print(df1.shape)
-
+df1 = dupMerge(df1)
 
 #-----------------df2----------------------
 df2 = pd.read_excel('./resources/Exp01/01dataSource.xlsx',converters=converters)
@@ -71,40 +115,16 @@ df2['ID']=df2['ID'].apply(compID)
 
 tpToPer(df2)
 
-df2 = df2.drop_duplicates(keep='first')               #去除完全相同的
-df2 = df2.drop_duplicates(subset=['ID'],keep='first') #暴力去重，ID重复则只保留第一个
-df2.sort_values('ID',inplace=True)
-df2 = df2.reset_index(drop=True)                      #去除后重设打乱的index
-# print(df2.shape)
-
+df2 = dupMerge(df2)
 
 
 #------------------df----------------------
-df=pd.concat([df1,df2],ignore_index=True)
-df.sort_values('ID',inplace=True)
-
-df = df.drop_duplicates(keep='first')           #去除完全相同的行
-
-df = df.reset_index(drop=True)
-dup = df.duplicated(subset=['ID'])
-dupIndex = dup[dup.values==True].index.tolist() #获取‘ID’冗余（第二次出现）的行
-
-#用于判断位于[row,col]的值是否为Nan (pd.isna(df.iloc[row,col])) 
-#定位元素(df.iloc[row, col])
-
-# print(dupIndex)
-
-for row in dupIndex:
-    col=df.shape[1] # 16
-    for col in range(col):
-        if pd.isna(df.iloc[row-1,col]):
-            df.iloc[row-1,col]=df.iloc[row,col]
-
-df = df.drop_duplicates(subset=['ID'],keep='first')           #去除ID相同的行
-df = df.reset_index(drop=True)
+df = pd.concat([df1,df2],ignore_index=True)
+df = dupMerge(df)
 
 # print(df) #最终合并的dataframe
+
 df.to_csv('./resources/Exp01/MergeData.csv',index=False)
+
 print("done")
 
-#hello lzp
