@@ -57,8 +57,7 @@ if __name__=='__main__':
         for index in range(len(cList)):
             new_num = round((cList[index]-cMean)/cSD,5)
             df.loc[index,label] = new_num
-
+            
+    #对每门成绩进行z-scores归一化，得到的数据矩阵:df
     print(df)
     df.to_csv('./resources/Exp01/z-score Data.csv',index=False)
-
-    # print(type(C4[30]))
