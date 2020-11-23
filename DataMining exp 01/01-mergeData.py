@@ -93,38 +93,39 @@ def dupMerge(dataframe):
     df = df.reset_index(drop=True)      
 
     return df
+if __name__ == '__main__':
 
-converters={'Gender':lambda x:gen(x),'Height':lambda x: height(x),'Constitution':lambda x:conChange(x)}
-
-
-#-----------------df1----------------------
-df1 = pd.read_table('./resources/Exp01/01dataSourcecp.txt',sep=',',converters=converters)
-
-tpToPer(df1)
-
-df1 = dupMerge(df1)
-
-#-----------------df2----------------------
-df2 = pd.read_excel('./resources/Exp01/01dataSource.xlsx',converters=converters)
-
-def compID(id):
-    x=int(id)
-    return 202000+x
-
-df2['ID']=df2['ID'].apply(compID)
-
-tpToPer(df2)
-
-df2 = dupMerge(df2)
+    converters={'Gender':lambda x:gen(x),'Height':lambda x: height(x),'Constitution':lambda x:conChange(x)}
 
 
-#------------------df----------------------
-df = pd.concat([df1,df2],ignore_index=True)
-df = dupMerge(df)
+    #-----------------df1----------------------
+    df1 = pd.read_table('./resources/Exp01/01dataSourcecp.txt',sep=',',converters=converters)
 
-# print(df) #最终合并的dataframe
+    tpToPer(df1)
 
-df.to_csv('./resources/Exp01/MergeData.csv',index=False)
+    df1 = dupMerge(df1)
 
-print("done")
+    #-----------------df2----------------------
+    df2 = pd.read_excel('./resources/Exp01/01dataSource.xlsx',converters=converters)
+
+    def compID(id):
+        x=int(id)
+        return 202000+x
+
+    df2['ID']=df2['ID'].apply(compID)
+
+    tpToPer(df2)
+
+    df2 = dupMerge(df2)
+
+    #------------------df----------------------
+    df = pd.concat([df1,df2],ignore_index=True)
+    df = dupMerge(df)
+
+    print(df) #最终合并的dataframe
+
+    #将结果保存到csv中
+    # df.to_csv('./resources/Exp01/MergeData.csv',index=False)
+
+    print("done")
 
