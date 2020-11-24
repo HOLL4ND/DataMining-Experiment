@@ -1,8 +1,10 @@
 from numpy.core.defchararray import index
 import pandas as pd
 import numpy as np
-# pd.set_option('display.max_rows',None)
+import math
+pd.set_option('display.max_rows',None)
 
+#性别统一使用 male 和 female
 def gen(gender):
     if gender=='boy':
         return 'male'
@@ -11,6 +13,7 @@ def gen(gender):
     else:
         return gender
 
+#身高统一使用单位：米
 def height(height):
     h = float(height)
     if h>10:
@@ -19,6 +22,7 @@ def height(height):
     else:
         return h
 
+#体侧成绩转百分制
 def conChange(consti):
     if consti == 'excellent':
         return 90
@@ -37,6 +41,7 @@ def TenTimes(score):
     s=float(score)*10
     return s
 
+#十分制成绩转为百分制
 def tpToPer(df):
     df['C6']=df['C6'].apply(TenTimes)
     df['C7']=df['C7'].apply(TenTimes)
@@ -44,9 +49,11 @@ def tpToPer(df):
     df['C9']=df['C9'].apply(TenTimes)
     df['C10']=df['C10'].apply(TenTimes)
 
-
+#合并处理函数
 def dupMerge(dataframe):
-
+    '''
+    合并处理函数,仅保留重复的第一个值,如果行中有空缺则向重复行寻找
+    '''
     df=dataframe
 
     #根据ID排序
@@ -93,6 +100,35 @@ def dupMerge(dataframe):
     df = df.reset_index(drop=True)      
 
     return df
+
+def mean_list(list)->float:
+    '''
+    返回列表的平均值，计算时跳过空缺值
+    '''
+    sum=float(0)
+    n = float(len(list))
+    for num in list:
+        #跳过空缺值
+        if math.isnan(num):
+            n-=1
+            continue
+        sum += num
+    #list中没有有效值
+    if n == 0:
+        return float('nan')
+    mean = sum/n
+    return mean
+
+def fillNaN(df):
+    cLabels  = df.columns.values.tolist()[5:15]
+    for label in cLabels:
+        cList = df[label].tolist()
+        cMean = mean_list(cList)
+        if math.isnan(cMean):
+            continue
+        df[label].fillna(cMean,inplace=True)
+
+
 if __name__ == '__main__':
 
     converters={'Gender':lambda x:gen(x),'Height':lambda x: height(x),'Constitution':lambda x:conChange(x)}
@@ -108,6 +144,7 @@ if __name__ == '__main__':
     #-----------------df2----------------------
     df2 = pd.read_excel('./resources/Exp01/01dataSource.xlsx',converters=converters)
 
+    #学生ID处理函数
     def compID(id):
         x=int(id)
         return 202000+x
@@ -119,10 +156,15 @@ if __name__ == '__main__':
     df2 = dupMerge(df2)
 
     #------------------df----------------------
+    #合并两表
     df = pd.concat([df1,df2],ignore_index=True)
     df = dupMerge(df)
 
-    print(df) #最终合并的dataframe
+    #将空缺处填上该列均值
+    fillNaN(df)
+
+    #最终合并的dataframe=>'df'
+    print(df) 
 
     #将结果保存到csv中
     # df.to_csv('./resources/Exp01/MergeData.csv',index=False)
