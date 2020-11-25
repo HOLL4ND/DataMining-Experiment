@@ -120,7 +120,7 @@ def mean_list(list)->float:
     return mean
 
 def fillNaN(df):
-    cLabels  = df.columns.values.tolist()[5:15]
+    cLabels  = df.columns.values.tolist()[5:16]
     for label in cLabels:
         cList = df[label].tolist()
         cMean = mean_list(cList)
@@ -167,7 +167,7 @@ if __name__ == '__main__':
     print(df) 
 
     #将结果保存到csv中
-    df.to_csv('./resources/Exp01/MergeData.csv',index=False)
+    df.to_csv('./output/Exp01/MergeData.csv',index=False)
 
     print("done")
 
