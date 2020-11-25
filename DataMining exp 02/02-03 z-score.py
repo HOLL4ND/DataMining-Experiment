@@ -46,7 +46,7 @@ if __name__=='__main__':
     df = pd.read_csv('./resources/Exp01/MergeData.csv')
 
     #获取课程的列名
-    cLabels  = df.columns.values.tolist()[5:15]
+    cLabels  = df.columns.values.tolist()[5:16]
     for label in cLabels:
         cList = df[label].tolist()
         cMean = mean_list(cList)
@@ -60,4 +60,4 @@ if __name__=='__main__':
             
     #对每门成绩进行z-scores归一化，得到的数据矩阵:df
     print(df)
-    df.to_csv('./resources/Exp01/z-score Data.csv',index=False)
+    df.to_csv('./output/Exp02/z-score Data.csv',index=False)

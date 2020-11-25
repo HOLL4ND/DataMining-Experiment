@@ -167,7 +167,7 @@ if __name__ == '__main__':
     print(df) 
 
     #将结果保存到csv中
-    df.to_csv('./resources/Exp01/MergeData.csv',index=False)
+    df.to_csv('./output/Exp01/MergeData.csv',index=False)
 
     print("done")
 
