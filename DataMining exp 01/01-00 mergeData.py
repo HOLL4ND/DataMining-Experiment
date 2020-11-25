@@ -120,7 +120,7 @@ def mean_list(list)->float:
     return mean
 
 def fillNaN(df):
-    cLabels  = df.columns.values.tolist()[5:15]
+    cLabels  = df.columns.values.tolist()[5:16]
     for label in cLabels:
         cList = df[label].tolist()
         cMean = mean_list(cList)
