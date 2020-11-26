@@ -11,4 +11,4 @@ plt.xlabel('C1 Score')
 plt.ylabel('Constitution')
 plt.savefig('./DataMining exp 02/02-01.png',bbox_inches='tight')
 plt.show()
-#hhhh
+
