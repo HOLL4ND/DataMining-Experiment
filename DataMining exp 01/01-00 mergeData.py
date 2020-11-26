@@ -129,16 +129,6 @@ def fillNaN(df):
         df[label].fillna(cMean,inplace=True)
 
 
-#学生中家乡在广州，课程1在80分以上，且课程9在9分以上的男同学的数量。
-def Num_boy(df):
-    num = 0
-    row = df.shape[0] - 1
-    for i in range(row):
-        if(df['City'][i] == 'Guangzhou' and df['C1'][i] >= 80 and df['C9'][i] >= 90 and df['Gender'][i] == ' male '):
-            num += 1
-       
-    print("The number of male students:" ,num)
-
 
 if __name__ == '__main__':
 
@@ -177,9 +167,7 @@ if __name__ == '__main__':
     #最终合并的dataframe=>'df'
     print(df) 
 
-    #01-01
-    #学生中家乡在广州，课程1在80分以上，且课程9在9分以上的男同学的数量。
-    Num_boy(df)
+
 
     #将结果保存到csv中
     df.to_csv('./output/Exp01/MergeData.csv',index=False)
