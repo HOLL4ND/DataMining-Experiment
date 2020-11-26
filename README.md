@@ -28,5 +28,9 @@
 
 ## 小组成员
 
-[林昊蓝](https://github.com/HOLL4ND)	[罗乾杰](https://github.com/Lier9527)	[李志鹏](https://github.com/LIMU-c)
+[林昊蓝](https://github.com/HOLL4ND)	HOLL4ND
+
+[罗乾杰](https://github.com/Lier9527) Lier9527
+
+[李志鹏](https://github.com/LIMU-c) LIMU-c
 
