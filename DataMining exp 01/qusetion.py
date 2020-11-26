@@ -25,19 +25,19 @@ def question_1(data, count):  # 学生中家乡在Beijing的所有课程的平�
     print("Beijing的平均成绩：\n", q1)
 
 
-def question_3(data, count): # 比较广州和上海两地女生的平均体能测试成绩，哪个地区的更强些？
+def question_3(data, count):  # 比较广州和上海两地女生的平均体能测试成绩，哪个地区的更强些？
     c_Guangzhou = 0
     c_Shanghai = 0
     G_Guangzhou = 0
     G_Shanghai = 0
     i = 0
     while i < count:
-        if d.loc[i]['City'] == 'Guangzhou' and d.loc[i]['Gender'] == 'female':
+        if data.loc[i]['City'] == 'Guangzhou' and data.loc[i]['Gender'] == 'female':
             c_Guangzhou += 1
             G_Guangzhou += d.loc[i]['Constitution']
-        if d.loc[i]['City'] == 'Shanghai' and d.loc[i]['Gender'] == 'female':
+        if data.loc[i]['City'] == 'Shanghai' and data.loc[i]['Gender'] == 'female':
             c_Shanghai += 1
-            G_Shanghai += d.loc[i]['Constitution']
+            G_Shanghai += data.loc[i]['Constitution']
         i += 1
     aver_G = G_Guangzhou / c_Guangzhou
     aver_S = G_Shanghai / c_Shanghai
@@ -47,7 +47,7 @@ def question_3(data, count): # 比较广州和上海两地女生的平均体能�
         print("广州女生平均体能测试成绩更高。")
     elif aver_S > aver_G:
         print("上海女生平均体能测试成绩更高。")
-    else :
+    else:
         print("广州上海女生平均体能测试成绩一样高。")
 
 
