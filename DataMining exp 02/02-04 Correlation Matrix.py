@@ -48,15 +48,15 @@ def z_score(df,colList=None):
     if colList is None:
         
         return
-    # for label in colList:
-    #     cList = df[label].tolist()
-    #     cMean = mean_list(cList)
-    #     cSD = SD_list(cList,cMean)
-    #     df[label].fillna(cMean,inplace=True)
-    #     cList = df[label].tolist()
-    #     for index in range(len(cList)):
-    #         new_num = round((cList[index]-cMean)/cSD,5)
-    #         df.loc[index,label] = new_num
+    for label in colList:
+        cList = df[label].tolist()
+        cMean = mean_list(cList)
+        cSD = SD_list(cList,cMean)
+        df[label].fillna(cMean,inplace=True)
+        cList = df[label].tolist()
+        for index in range(len(cList)):
+            new_num = round((cList[index]-cMean)/cSD,5)
+            df.loc[index,label] = new_num
 
 
 def corMatrix(df):
@@ -99,7 +99,7 @@ if __name__ == '__main__':
     isnan = df.isnull().all()
     dropCol = isnan[isnan.values==True].index.tolist()
     df.drop(columns=dropCol,inplace=True)
-    
+
     #提取数值数据
     dfScore = df.iloc[:,5:16]
 

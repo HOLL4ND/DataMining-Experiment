@@ -41,7 +41,11 @@ def SD_list(list,mean):
 
     return SD_list
 
-def z_score(df,colList):
+def z_score(df,colList=None):
+    #如果没有给出列名则对整个dataframe 作z-score归一化
+    if colList is None:
+        
+        return
     for label in colList:
         cList = df[label].tolist()
         cMean = mean_list(cList)
