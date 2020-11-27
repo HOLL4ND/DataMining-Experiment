@@ -41,23 +41,29 @@ def SD_list(list,mean):
 
     return SD_list
 
-if __name__=='__main__':
-
-    df = pd.read_csv('./resources/Exp01/MergeData.csv')
-
-    #获取课程的列名
-    cLabels  = df.columns.values.tolist()[5:16]
-    for label in cLabels:
+def z_score(df,colList):
+    for label in colList:
         cList = df[label].tolist()
         cMean = mean_list(cList)
         cSD = SD_list(cList,cMean)
         df[label].fillna(cMean,inplace=True)
         cList = df[label].tolist()
-        zList = 0
         for index in range(len(cList)):
             new_num = round((cList[index]-cMean)/cSD,5)
             df.loc[index,label] = new_num
-            
+
+
+if __name__=='__main__':
+
+    #获取合并后的数据
+    df = pd.read_csv('./output/Exp01/MergeData.csv')
+
+    #获取课程的列名
+    cLabels  = df.columns.values.tolist()[5:16]
+
+    #对给dataframe中给定列名进行z-score归一化
+    z_score(df,cLabels)
+    
     #对每门成绩进行z-scores归一化，得到的数据矩阵:df
     print(df)
     df.to_csv('./output/Exp02/z-score Data.csv',index=False)
