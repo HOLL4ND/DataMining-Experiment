@@ -13,6 +13,7 @@ city=['Beijing','Guangzhou','Shenzhen','Shanghai']
 constitution=['bad','general','good','excellent']
 gender=['boy','girl']
 
+
 student = []
 
 f=open(txtpath,encoding='utf-8')

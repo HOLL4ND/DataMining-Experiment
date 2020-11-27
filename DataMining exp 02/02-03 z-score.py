@@ -44,7 +44,16 @@ def SD_list(list,mean):
 def z_score(df,colList=None):
     #如果没有给出列名则对整个dataframe 作z-score归一化
     if colList is None:
-        
+        cList = df.columns.values.tolist()
+        for label in cList:
+            cList = df[label].tolist()
+            cMean = mean_list(cList)
+            cSD = SD_list(cList,cMean)
+            df[label].fillna(cMean,inplace=True)
+            cList = df[label].tolist()
+            for index in range(len(cList)):
+                new_num = round((cList[index]-cMean)/cSD,5)
+                df.loc[index,label] = new_num
         return
     for label in colList:
         cList = df[label].tolist()
@@ -66,8 +75,11 @@ if __name__=='__main__':
     cLabels  = df.columns.values.tolist()[5:16]
 
     #对给dataframe中给定列名进行z-score归一化
-    z_score(df,cLabels)
+    # z_score(df,cLabels)
+    dfScore = df.iloc[:,5:16]
+
+    z_score(dfScore)
     
     #对每门成绩进行z-scores归一化，得到的数据矩阵:df
-    print(df)
+    print(dfScore)
     df.to_csv('./output/Exp02/z-score Data.csv',index=False)
