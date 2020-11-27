@@ -71,15 +71,28 @@ if __name__=='__main__':
     #获取合并后的数据
     df = pd.read_csv('./output/Exp01/MergeData.csv')
 
+    #去除完全空缺的列
+    isnan = df.isnull().all()
+    dropCol = isnan[isnan.values==True].index.tolist()
+    df.drop(columns=dropCol,inplace=True)
+
     #获取课程的列名
     cLabels  = df.columns.values.tolist()[5:16]
 
     #对给dataframe中给定列名进行z-score归一化
-    # z_score(df,cLabels)
+    z_score(df,cLabels)
+
+    #输出实验结果
+    # print(df)
+
     dfScore = df.iloc[:,5:16]
 
-    z_score(dfScore)
-    
-    #对每门成绩进行z-scores归一化，得到的数据矩阵:df
+    #进行矩阵的转置
+    dfScore = dfScore.T
+    # colList = dfScore.columns.values.tolist()
+
     print(dfScore)
-    df.to_csv('./output/Exp02/z-score Data.csv',index=False)
+
+
+    #保存实验结果
+    # df.to_csv('./output/Exp02/z-score Data.csv',index=False)
