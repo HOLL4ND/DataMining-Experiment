@@ -52,7 +52,7 @@ def question_3(data, count): # 比较广州和上海两地女生的平均体能�
 
 
 if __name__ == '__main__':
-    d = pd.read_csv('MergeData.csv')
+    d = pd.read_csv('./output/Exp01/MergeData.csv')
     d = d.fillna(0)
     lenth = len(d)  # 学生人数
     question_1(d, lenth)
