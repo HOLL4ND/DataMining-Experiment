@@ -126,13 +126,13 @@ if __name__ == '__main__':
     z_score(dfScore)
 
     #进行矩阵的转置
-    # dfScore = dfScore.T
+    dfScore = dfScore.T
 
-    # #将转置后的矩阵列名类型转换为string
-    # dfScore.columns = dfScore.columns.map(str)
+    #将转置后的矩阵列名类型转换为string
+    dfScore.columns = dfScore.columns.map(str)
 
-    # #再对矩阵进行z-score归一化
-    # z_score(dfScore)
+    #再对矩阵进行z-score归一化
+    z_score(dfScore)
     # print(dfScore)
 
     resultMatrix = corMatrix(dfScore)
@@ -141,7 +141,7 @@ if __name__ == '__main__':
     print(dfresult)
 
     plt.figure(figsize=(50,50),dpi=80)
-    sn.heatmap(dfresult,yticklabels=False,linewidths=.3)
+    sn.heatmap(dfresult,yticklabels=False)
     plt.savefig('./DataMining exp 02/02-04.png',bbox_inches='tight')
     # plt.show()
 
