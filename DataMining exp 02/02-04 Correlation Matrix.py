@@ -140,8 +140,8 @@ if __name__ == '__main__':
     dfresult = pd.DataFrame(data = nprm)
     print(dfresult)
 
-    plt.figure(figsize=(50,50),dpi=80)
-    sn.heatmap(dfresult,yticklabels=False)
+    plt.figure(figsize=(25,25),dpi=80)
+    sn.heatmap(dfresult,yticklabels=False,center=0)
     plt.savefig('./DataMining exp 02/02-04.png',bbox_inches='tight')
     # plt.show()
 
