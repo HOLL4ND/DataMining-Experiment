@@ -85,7 +85,7 @@ def corMatrix(df):
     #行数量,这里做样本数量 
     sampleNum = df.shape[0] 
     #用于存储每个维度平均值的list
-    col_mean = []          
+    col_mean = []
     #求每个列的平均值,调用mean_list(list)函数
     for column in colLabels:
         c_mean = mean_list(df[column].values.tolist())
@@ -143,6 +143,6 @@ if __name__ == '__main__':
     plt.figure(figsize=(25,25),dpi=80)
     sn.heatmap(dfresult,yticklabels=False,center=0)
     plt.savefig('./DataMining exp 02/02-04.png',bbox_inches='tight')
-    # plt.show()
+    plt.show()
 
 
