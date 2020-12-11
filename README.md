@@ -10,7 +10,7 @@
 0.  :white_check_mark: [Code](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2001/01-00%20mergeData.py) 两个数据源合并后读入内存，并统计：
 1.  :white_check_mark: [Code](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2001/qusetion.py) 学生中家乡在Beijing的所有课程的平均成绩。
 2.  :white_check_mark: [Code](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2001/01-02_04-question.py) 学生家乡在广州，课程1在80分以上，且课程9在9分以上的男同学的数量。(备注：该处做了修正，课程10数据为空，更改为课程9)
-3.  :white_check_mark: 01-03 Code 较广州和上海两地女生的平均体能测试成绩，哪个地区的更强些？
+3.  :white_check_mark: [Code](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2001/qusetion.py) 较广州和上海两地女生的平均体能测试成绩，哪个地区的更强些？
 4.  :white_check_mark: [Code](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2001/01-02_04-question.py) 学习成绩和体能测试成绩，两者的相关性是多少？（九门课的成绩分别与体能成绩计算相关性）
 
 
