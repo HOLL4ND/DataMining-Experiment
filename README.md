@@ -45,7 +45,7 @@
 | 4.29 | 9.55 |      | 5.87 | 3.87 |      | 2.58 | 7.10 |      | 5.38 | 2.32 |      | 6.32 | 3.62 |
 | 3.35 | 6.65 |      | 5.47 | 2.21 |      | 3.45 | 7.88 |      | 5.13 | 2.73 |      | 7.26 | 4.19 |
 
-![](./DataMining exp 03/example_x_y.png)
+![](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2003/example_x_y.png)
 
 :question:  **问题**  
 
