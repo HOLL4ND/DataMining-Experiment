@@ -76,8 +76,34 @@ double getDist_xy(dataPoint a, dataPoint b)
     return dist;
 }
 
-void getCluRadius(vector<point> &data, int k, point *Centroid, float *cluRadius)
+void getCluRadius(vector<point> &data, int k, point *Centroid)
 {
+    int i, j;
+    float distance;
+    float *maxR = new float[k];
+    for (size_t i = 0; i < k; i++)
+    {
+        maxR[i] = 0;
+    }
+    for (i = 0; i < data.size(); i++)
+    {
+        for (j = 0; j < k; j++)
+        {
+            if (data[i].clusterNumber == Centroid[j].clusterNumber)
+            {
+                distance = getDist_xy(data[i], Centroid[j]);
+                if (distance > maxR[j])
+                {
+                    maxR[j] = distance;
+                }
+            }
+        }
+    }
+    for (i = 0; i < k; i++)
+    {
+        Centroid[i].radius = maxR[i];
+    }
+    delete maxR;
 }
 
 bool isCentrMoving(point p1, point p2)
@@ -108,7 +134,9 @@ void init_cluster_centers(vector<point> &data, int k, point *Centroid)
         }
         diff.push_back(randomNumber);
         data[randomNumber].clusterNumber = (i + 1);
-        Centroid[i] = data[randomNumber];
+        Centroid[i].x = data[randomNumber].x;
+        Centroid[i].y = data[randomNumber].y;
+        Centroid[i].clusterNumber = data[randomNumber].clusterNumber;
     }
 }
 
@@ -116,12 +144,7 @@ void update_clusters(vector<point> &data, int k, point *Centroid)
 {
     int i, j, distance;
     float bestMiniDist;
-    float *maxRadius = new float[k];
     int pointStillMoving = 0;
-    for (i = 0; i < k; i++)
-    {
-        maxRadius[i] = 0;
-    }
     for (i = 0; i < data.size(); i++)
     {
         bestMiniDist = 32767;
@@ -133,14 +156,8 @@ void update_clusters(vector<point> &data, int k, point *Centroid)
                 bestMiniDist = distance;
                 data[i].clusterNumber = Centroid[j].clusterNumber;
             }
-            if (distance > maxRadius[j])
-            {
-                maxRadius[j] = distance;
-                Centroid[j].radius = maxRadius[j];
-            }
         }
     }
-    delete maxRadius;
 }
 
 int recalculate_centroids(vector<point> &data, int k, point *Centroid)
@@ -191,9 +208,8 @@ int recalculate_centroids(vector<point> &data, int k, point *Centroid)
 
 void kMean(vector<point> &data, int k)
 {
-    ofstream pointState("procedure.txt");
-    ofstream onefile("onestep.txt");
-    ofstream outcentr("centroid.txt");
+    ofstream pointState("./output/procedure.txt");
+    ofstream outcentr("./output/centroid.txt");
 
     int isStillMoving = 1, step = 0;
     dataPoint *Centroid = new dataPoint[k];
@@ -203,36 +219,39 @@ void kMean(vector<point> &data, int k)
 
     while (isStillMoving)
     {
-        step++;
-
         update_clusters(data, k, Centroid);
         isStillMoving = recalculate_centroids(data, k, Centroid);
-
-        graph_state2file(pointState, data);
-
-        for (int i = 0; i < k; i++)
+        if (isStillMoving == 1)
         {
-            outcentr.setf(ios::fixed);
-            outcentr << setprecision(2) << Centroid[i].x << ',' << Centroid[i].y << ',' << Centroid[i].clusterNumber << ',' << Centroid[i].radius << endl;
+            step++;
+            graph_state2file(pointState, data);
+            getCluRadius(data, k, Centroid);
+
+            for (int i = 0; i < k; i++)
+            {
+                outcentr.setf(ios::fixed);
+                outcentr << setprecision(4) << Centroid[i].x << ',' << Centroid[i].y << ',' << Centroid[i].clusterNumber << ',' << Centroid[i].radius << endl;
+            }
         }
     }
 
-    graph_state2file(onefile, data);
-
-    cout << "step:" << step << endl;
+    cout << "Total step: " << step << endl;
     delete Centroid;
 }
 
 int main()
 {
-    string fileName = "datakmean.txt";
+    string fileName = "./sourceData/datakmean.txt";
+    ofstream outResult("./output/clustering result.txt");
     vector<point> data = get_data(fileName);
 
     int k = 2;
 
     kMean(data, k);
-    cout << "Cluster result:\n";
-    printVector(data);
+
+    graph_state2file(outResult, data);
+    // cout << "Cluster result:\n";
+    // printVector(data);
 
     return 0;
 }

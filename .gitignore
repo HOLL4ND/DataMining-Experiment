@@ -9,6 +9,5 @@ DataMining exp 03/tempCodeRunnerFile.cpp
 .gitignore
 .gitignore
 DataMining exp 03/REF.py
-DataMining exp 03/onestep.txt
-DataMining exp 03/procedure.txt
-DataMining exp 03/centroid.txt
+DataMining exp 03/output/centroid.txt
+DataMining exp 03/output/procedure.txt
