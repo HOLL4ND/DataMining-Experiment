@@ -2,17 +2,22 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-# df = pd.read_table("datakmean.txt",sep=',',header=None)
-# df.columns=['x','y']
+df = pd.read_table("./sourceData/datakmean.txt",sep=',',header=None)
+df.columns=['x','y']
 
-df = pd.read_table("procedure.txt",sep=',',header=None)
-df.columns=['x','y','cluster']
-# df = df.tail(28)
-df=df.head(20)
-cen = pd.read_table("centroid.txt",sep=',',header=None)
+rawData = pd.read_table('./sourceData/datakmean.txt',sep=',',header=None)
+dataSize = rawData.shape[0]
+k=2
+
+# df = pd.read_table("./output/procedure.txt",sep=',',header=None)
+# df.columns=['x','y','cluster']
+# df=df.tail(dataSize)
+
+cen = pd.read_table("./output/centroid.txt",sep=',',header=None)
 # cen = cen.tail(2) 
-cen = cen.head(2)
+cen = cen.tail(k)
 cen.columns=['x','y','cluster','radius']
+
 cenX = cen['x'].tolist()
 cenY = cen['y'].tolist()
 cenR = cen['radius'].tolist()

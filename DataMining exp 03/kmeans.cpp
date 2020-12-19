@@ -250,8 +250,6 @@ int main()
     kMean(data, k);
 
     graph_state2file(outResult, data);
-    // cout << "Cluster result:\n";
-    // printVector(data);
 
     return 0;
 }
