@@ -210,6 +210,7 @@ void kMean(vector<point> &data, int k)
 {
     ofstream pointState("./output/procedure.txt");
     ofstream outcentr("./output/centroid.txt");
+    ofstream outFinalcentr("./output/centroid final.txt");
 
     int isStillMoving = 1, step = 0;
     dataPoint *Centroid = new dataPoint[k];
@@ -234,7 +235,12 @@ void kMean(vector<point> &data, int k)
             }
         }
     }
-
+    outFinalcentr << "x,y,class,radius" << endl;
+    for (int i = 0; i < k; i++)
+    {
+        outFinalcentr.setf(ios::fixed);
+        outFinalcentr << setprecision(4) << Centroid[i].x << ',' << Centroid[i].y << ',' << Centroid[i].clusterNumber << ',' << Centroid[i].radius << endl;
+    }
     cout << "Total step: " << step << endl;
     delete Centroid;
 }
@@ -242,13 +248,13 @@ void kMean(vector<point> &data, int k)
 int main()
 {
     string fileName = "./sourceData/datakmean.txt";
-    ofstream outResult("./output/clustering result.txt");
+    ofstream outResult("./output/clustering result k 2.txt");
     vector<point> data = get_data(fileName);
 
     int k = 2;
 
     kMean(data, k);
-
+    outResult << "x,y,class" << endl;
     graph_state2file(outResult, data);
 
     return 0;
