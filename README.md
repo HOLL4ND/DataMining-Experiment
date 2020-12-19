@@ -47,6 +47,9 @@
 
 ![](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2003/example_x_y.png)
 
+结果展示：
+![](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2003/result.png)
+
 :question:  **问题**  
 
 找到聚类中心后，判断(2,6)是属于哪一类？
