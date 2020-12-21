@@ -88,7 +88,17 @@ def predict(X, theta):
     return [1 if x >= 0.5 else 0 for x in model(X, theta)]
 
 
-pddata = pd.read_csv('data.csv', header=None, names=['x', 'y', 'z'])
+def bin(x):
+    tag = float(x)
+    if tag == 2:
+        return 1
+    elif tag == 1:
+        return 0
+
+
+converter = {'class': lambda x: bin(x)}
+pddata = pd.read_csv('./DataMining exp 03/output/clustering result k 2.txt',dtype=float,converters=converter)
+pddata.columns = ['x', 'y', 'z']
 positive = pddata[pddata['z'] == 1]
 negative = pddata[pddata['z'] == 0]
 fig, ax = plt.subplots(figsize=(10, 5))
