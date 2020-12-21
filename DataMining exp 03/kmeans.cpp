@@ -19,31 +19,38 @@ typedef struct dataPoint
     float radius;
 } point;
 
-vector<point> get_data(string filepath)
+bool get_data(string filepath, vector<point> &p)
 {
 
     ifstream file(filepath.c_str());
-    string str;
-    string delimiter = ",";
-    vector<point> p;
-    point tmp;
-
-    while (getline(file, str))
+    if (file.is_open())
     {
-        size_t pos = 0;
-        string x;
-        while ((pos = str.find(delimiter)) != string::npos)
-        {
-            x = str.substr(0, pos);
-            tmp.x = stof(x);
-            // cout << x << '\t';
-            str.erase(0, pos + delimiter.length());
+        string str;
+        string delimiter = ",";
+        point tmp;
 
-            tmp.y = stof(str);
-            p.push_back(tmp);
+        while (getline(file, str))
+        {
+            size_t pos = 0;
+            string x;
+            while ((pos = str.find(delimiter)) != string::npos)
+            {
+                x = str.substr(0, pos);
+                tmp.x = stof(x);
+                // cout << x << '\t';
+                str.erase(0, pos + delimiter.length());
+
+                tmp.y = stof(str);
+                tmp.clusterNumber = 0;
+                p.push_back(tmp);
+            }
         }
+        return true;
     }
-    return p;
+    else
+    {
+        return false;
+    }
 }
 
 void printPoint(dataPoint p)
@@ -144,10 +151,13 @@ void update_clusters(vector<point> &data, int k, point *Centroid)
 {
     int i, j, distance;
     float bestMiniDist;
+    int currentCluster;
+    int stillMoving = 0;
     int pointStillMoving = 0;
     for (i = 0; i < data.size(); i++)
     {
         bestMiniDist = 32767;
+
         for (j = 0; j < k; j++)
         {
             distance = getDist_xy(data[i], Centroid[j]);
@@ -217,7 +227,6 @@ void kMean(vector<point> &data, int k)
     float *cluRadius = new float[k];
 
     init_cluster_centers(data, k, Centroid);
-
     while (isStillMoving)
     {
         update_clusters(data, k, Centroid);
@@ -249,13 +258,21 @@ int main()
 {
     string fileName = "./sourceData/datakmean.txt";
     ofstream outResult("./output/clustering result k 2.txt");
-    vector<point> data = get_data(fileName);
 
-    int k = 2;
+    vector<point> data;
+    if (get_data(fileName, data))
+    {
+        int k = 2;
 
-    kMean(data, k);
-    outResult << "x,y,class" << endl;
-    graph_state2file(outResult, data);
+        kMean(data, k);
+
+        outResult << "x,y,class" << endl;
+        graph_state2file(outResult, data);
+    }
+    else
+    {
+        cout << "No such file: " << fileName << endl;
+    }
 
     return 0;
 }
