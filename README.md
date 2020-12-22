@@ -1,12 +1,14 @@
 # 数据挖掘-实验
 
+ 
+
 ## 实验内容
 
 :link:[腾讯文档：《机器学习与数据挖掘实验》](https://docs.qq.com/doc/DWXlEWVVZcG5CYWla?groupUin=K2qmpgFfKdRSE7Mz%252FS%252F10A%253D%253D&ADUIN=757685965&ADSESSION=1605947424&ADTAG=CLIENT.QQ.5779_.0&ADPUBNO=27063&_t=1606006564903)
 
+ 
 
-
-
+ 
 
 ## 语言支持 
 
@@ -14,11 +16,17 @@
 
 数据可视化模块：：[seaborn](https://seaborn.pydata.org/)  |  [Matplotlib](https://matplotlib.org/)
 
+ 
 
-
-
+ 
 
 ## 实验一 《多源数据集成、清洗和统计》
+
+**题目 ：**
+
+​		广州大学某班有同学100人，现要从两个数据源汇总学生数据。第一个数据源在数据库中，第二个数据源在txt文件中，两个数据源课程存在缺失、冗余和不一致性，请用C/C++/Java程序实现对两个数据源的一致性合并以及每个学生样本的数值量化。
+
+ 
 
 
 0.  :white_check_mark: [Code](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2001/01-00%20mergeData.py) 两个数据源合并后读入内存，并统计：
@@ -27,9 +35,13 @@
 3.  :white_check_mark: [Code](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2001/qusetion.py) 比较广州和上海两地女生的平均体能测试成绩，哪个地区的更强些？
 4.  :white_check_mark: [Code](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2001/01-02_04-question.py) 学习成绩和体能测试成绩，两者的相关性是多少？（九门课的成绩分别与体能成绩计算相关性）
 
+ 
 
+:warning:  **提示：**
 
+计算部分不能调用库函数；画图/可视化显示可可视化工具或API实现。
 
+ 
 
 
 ## 实验二 《数据统计和可视化》
@@ -42,15 +54,15 @@
 4.  :white_check_mark: [Code](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2002/02-04%20Correlation%20Matrix.py) 计算出100x100的相关矩阵，并可视化出混淆矩阵。（为避免歧义，这里“协相关矩阵”进一步细化更正为100x100的相关矩阵，100为学生样本数目，视实际情况而定）
 5.  根据相关矩阵，找到距离每个样本最近的三个样本，得到100x3的矩阵（每一行为对应三个样本的ID）输出到txt文件中，以\t,\n间隔。
 
-
+ 
 
 :warning:  **提示：**
 
 计算部分不能调用库函数；画图/可视化显示可可视化工具或API实现。
 
+ 
 
-
-
+ 
 
 
 ## 实验三  《k-means聚类算法》
