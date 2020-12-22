@@ -6,6 +6,18 @@
 
 
 
+
+
+## 语言支持 
+
+数据分析模块：[pandas](https://pandas.pydata.org/) 	[Numpy](https://numpy.org/)		
+
+数据可视化模块：：[seaborn](https://seaborn.pydata.org/) 	[Matplotlib](https://matplotlib.org/)
+
+
+
+
+
 ## 实验一 《多源数据集成、清洗和统计》
 
 
@@ -14,6 +26,8 @@
 2.  :white_check_mark: [Code](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2001/01-02_04-question.py) 学生家乡在广州，课程1在80分以上，且课程9在9分以上的男同学的数量。(备注：该处做了修正，课程10数据为空，更改为课程9)
 3.  :white_check_mark: [Code](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2001/qusetion.py) 比较广州和上海两地女生的平均体能测试成绩，哪个地区的更强些？
 4.  :white_check_mark: [Code](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2001/01-02_04-question.py) 学习成绩和体能测试成绩，两者的相关性是多少？（九门课的成绩分别与体能成绩计算相关性）
+
+
 
 
 
@@ -33,6 +47,8 @@
 :warning:  **提示：**
 
 计算部分不能调用库函数；画图/可视化显示可可视化工具或API实现。
+
+
 
 
 
@@ -68,6 +84,8 @@
 :warning:**注意**
 
 除文件读取外，不能使用C++基础库以外的API和库函数。
+
+
 
 
 
