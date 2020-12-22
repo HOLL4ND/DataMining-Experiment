@@ -4,6 +4,8 @@
 
 :link:[腾讯文档：《机器学习与数据挖掘实验》](https://docs.qq.com/doc/DWXlEWVVZcG5CYWla?groupUin=K2qmpgFfKdRSE7Mz%252FS%252F10A%253D%253D&ADUIN=757685965&ADSESSION=1605947424&ADTAG=CLIENT.QQ.5779_.0&ADPUBNO=27063&_t=1606006564903)
 
+
+
 ## 实验一 《多源数据集成、清洗和统计》
 
 
@@ -24,8 +26,15 @@
 2.  :white_check_mark: [Code](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2002/02-02%20histogram%20graph.py) 以5分为间隔，画出课程1的成绩直方图。
 3.  :white_check_mark: [Code](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2002/02-03%20z-score.py) 对每门成绩进行z-score归一化，得到归一化的数据矩阵。
 4.  :white_check_mark: [Code](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2002/02-04%20Correlation%20Matrix.py) 计算出100x100的相关矩阵，并可视化出混淆矩阵。（为避免歧义，这里“协相关矩阵”进一步细化更正为100x100的相关矩阵，100为学生样本数目，视实际情况而定）
-5. 根据相关矩阵，找到距离每个样本最近的三个样本，得到100x3的矩阵（每一行为对应三个样本的ID）输出到txt文件中，以\t,\n间隔。
-s
+5.  根据相关矩阵，找到距离每个样本最近的三个样本，得到100x3的矩阵（每一行为对应三个样本的ID）输出到txt文件中，以\t,\n间隔。
+
+
+
+:warning:  **提示：**
+
+计算部分不能调用库函数；画图/可视化显示可可视化工具或API实现。
+
+
 
 
 ## 实验三  《k-means聚类算法》
