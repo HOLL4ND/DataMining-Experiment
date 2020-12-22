@@ -10,7 +10,7 @@
 0.  :white_check_mark: [Code](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2001/01-00%20mergeData.py) 两个数据源合并后读入内存，并统计：
 1.  :white_check_mark: [Code](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2001/qusetion.py) 学生中家乡在Beijing的所有课程的平均成绩。
 2.  :white_check_mark: [Code](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2001/01-02_04-question.py) 学生家乡在广州，课程1在80分以上，且课程9在9分以上的男同学的数量。(备注：该处做了修正，课程10数据为空，更改为课程9)
-3.  :white_check_mark: [Code](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2001/qusetion.py) 较广州和上海两地女生的平均体能测试成绩，哪个地区的更强些？
+3.  :white_check_mark: [Code](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2001/qusetion.py) 比较广州和上海两地女生的平均体能测试成绩，哪个地区的更强些？
 4.  :white_check_mark: [Code](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2001/01-02_04-question.py) 学习成绩和体能测试成绩，两者的相关性是多少？（九门课的成绩分别与体能成绩计算相关性）
 
 
@@ -48,9 +48,7 @@ s
 
 ![](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2003/example_x_y.png)
 
-结果展示：
 
-![](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2003/result.png)
 
 :question:  **问题**  
 
@@ -64,9 +62,29 @@ s
 
 
 
+## 实验四 **《逻辑回归二分类》**
+
+:white_check_mark: [Code](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2004/LogisticRegression.py)
+
+**题目 ：** 
+
+学习sigmoid函数和逻辑回归算法。将实验三.2中的样例数据用聚类的结果打标签{0，1}，并用逻辑回归模型拟合。
+
+1. 学习并画出sigmoid函数
+2. 设计梯度下降算法，实现逻辑回归模型的学习过程。
+3. 根据给定数据（实验三.2），用梯度下降算法进行数据拟合，并用学习好的模型对(2,6)分类。
+
+
+
+:x:（对2,3实现有难度的同学，可以直接调用[sklearn](https://scikit-learn.org/stable/)中[LogisticRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression)进行学习）
+
+:heavy_check_mark:   利用 numpy 实现  
+
+
+
 ## 小组成员
 
-[林昊蓝](https://github.com/HOLL4ND)	HOLL4ND
+[林昊蓝](https://github.com/HOLL4ND) HOLL4ND
 
 [罗乾杰](https://github.com/Lier9527) Lier9527
 
