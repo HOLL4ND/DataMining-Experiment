@@ -24,7 +24,7 @@
 
 数据分析模块：[pandas](https://pandas.pydata.org/)  |  [Numpy](https://numpy.org/)		
 
-数据可视化模块：：[seaborn](https://seaborn.pydata.org/)  |  [Matplotlib](https://matplotlib.org/)
+数据可视化模块：[seaborn](https://seaborn.pydata.org/)  |  [Matplotlib](https://matplotlib.org/)
 
  
 
