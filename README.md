@@ -1,16 +1,5 @@
 # 数据挖掘-实验
 
-<p align="center" >
- <b >
-   TO EVERYONE WHO HAS FORKED THIS REPOSITORY
- </b>
-</p>
-     
-<p align="center">
- <b>
- !  THANK YOU  !
-  </b>
-</p>
 
 ## 实验内容
 
