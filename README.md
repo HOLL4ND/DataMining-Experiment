@@ -1,6 +1,6 @@
 # 数据挖掘-实验
 
- <center>**To everyone who has forked this repository**</center>
+ <center>To everyone who has forked this repository</center>
          
  **Thank you**
 
