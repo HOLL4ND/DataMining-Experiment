@@ -1,11 +1,16 @@
 # 数据挖掘-实验
 
-<p align="center">
- To everyone who has forked this repository
+<p align="center" >
+ <b >
+   TO EVERYONE WHO HAS FORKED THIS REPOSITORY
+ </b>
 </p>
- <center>To everyone who has forked this repository</center>
-         
- **Thank you**
+     
+<p align="center">
+ <b>
+ !THANK YOU！
+  </b>
+</p>
 
 ## 实验内容
 
@@ -127,6 +132,7 @@
 
 
 ## 小组成员
+**Thank you everyone !!!!!**
 
 [林昊蓝](https://github.com/HOLL4ND) HOLL4ND
 
