@@ -8,7 +8,7 @@
      
 <p align="center">
  <b>
- !THANK YOU！
+ !  THANK YOU  !
   </b>
 </p>
 
