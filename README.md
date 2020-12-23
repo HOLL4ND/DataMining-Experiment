@@ -9,7 +9,7 @@
 
  
 
-## 语言支持 
+## 第三方库
 
 数据分析模块：[pandas](https://pandas.pydata.org/)  |  [Numpy](https://numpy.org/)		
 
