@@ -1,6 +1,5 @@
 # 数据挖掘-实验
 
- 
 
 ## 实验内容
 
@@ -10,11 +9,11 @@
 
  
 
-## 语言支持 
+## 第三方库
 
-数据分析模块：[pandas](https://pandas.pydata.org/)  |  [Numpy](https://numpy.org/)		
+数据处理模块：[pandas](https://pandas.pydata.org/)  |  [Numpy](https://numpy.org/)		
 
-数据可视化模块：：[seaborn](https://seaborn.pydata.org/)  |  [Matplotlib](https://matplotlib.org/)
+数据可视化模块：[seaborn](https://seaborn.pydata.org/)  |  [Matplotlib](https://matplotlib.org/)
 
  
 
@@ -122,6 +121,7 @@
 
 
 ## 小组成员
+**Thank you everyone !!!!!**
 
 [林昊蓝](https://github.com/HOLL4ND) HOLL4ND
 
