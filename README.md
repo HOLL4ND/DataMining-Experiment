@@ -29,7 +29,7 @@
 | [DataMining exp 01](https://github.com/HOLL4ND/DataMining-Experiment/tree/main/DataMining%20exp%2001) | 实验一 代码                               |
 | [DataMining exp 02](https://github.com/HOLL4ND/DataMining-Experiment/tree/main/DataMining%20exp%2002) | 实验二 代码  运行结果                     |
 | [DataMining exp 03](https://github.com/HOLL4ND/DataMining-Experiment/tree/main/DataMining exp 03) | 实验三 代码  运行结果 源文件              |
-| [DataMining exp 04](https://github.com/HOLL4ND/DataMining-Experiment/tree/main/DataMining exp 04) | 实验四 代码 运行结果  源文件              |
+| [DataMining exp 04](https://github.com/HOLL4ND/DataMining-Experiment/tree/main/DataMining%20exp%2004) | 实验四 代码 运行结果  源文件              |
 | [output](https://github.com/HOLL4ND/DataMining-Experiment/tree/main/output) | 实验一 processed data  实验二的归一化数据 |
 | [resources](https://github.com/HOLL4ND/DataMining-Experiment/tree/main/resources) | 实验一 数据资源                           |
 
