@@ -1,13 +1,16 @@
 # 数据挖掘-实验
 
 
+
+[TOC]
+
+
+
 ## 实验内容
 
 :link:[腾讯文档：《机器学习与数据挖掘实验》](https://docs.qq.com/doc/DWXlEWVVZcG5CYWla?groupUin=K2qmpgFfKdRSE7Mz%252FS%252F10A%253D%253D&ADUIN=757685965&ADSESSION=1605947424&ADTAG=CLIENT.QQ.5779_.0&ADPUBNO=27063&_t=1606006564903)
 
- 
 
- 
 
 ## 第三方库
 
@@ -17,7 +20,22 @@
 
  
 
+
+
+## 仓库文件内容说明
+
  
+
+| 文件/目录                                                    | 说明                                      |
+| ------------------------------------------------------------ | ----------------------------------------- |
+| [DataMining exp 01](https://github.com/HOLL4ND/DataMining-Experiment/tree/main/DataMining exp 01) | 实验一 代码                               |
+| [DataMining exp 02](https://github.com/HOLL4ND/DataMining-Experiment/tree/main/DataMining exp 02) | 实验二 代码  运行结果                     |
+| [DataMining exp 03](https://github.com/HOLL4ND/DataMining-Experiment/tree/main/DataMining exp 03) | 实验三 代码  运行结果 源文件              |
+| [DataMining exp 04](https://github.com/HOLL4ND/DataMining-Experiment/tree/main/DataMining exp 04) | 实验四 代码 运行结果  源文件              |
+| [output](https://github.com/HOLL4ND/DataMining-Experiment/tree/main/output) | 实验一 processed data  实验二的归一化数据 |
+| [resources](https://github.com/HOLL4ND/DataMining-Experiment/tree/main/resources) | 实验一 数据资源                           |
+
+
 
 ## 实验一 《多源数据集成、清洗和统计》
 
@@ -100,7 +118,7 @@
 
 
 
-## 实验四 **《逻辑回归二分类》**
+## 实验四 《逻辑回归二分类》
 
 :white_check_mark: [Code](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2004/LogisticRegression.py)
 
