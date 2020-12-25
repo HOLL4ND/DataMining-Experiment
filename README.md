@@ -15,12 +15,14 @@
 - [小组成员](#小组成员)
 
 ## 实验说明文档
+[返回目录](#目录)
 
 :link:[腾讯文档：《机器学习与数据挖掘实验》](https://docs.qq.com/doc/DWXlEWVVZcG5CYWla?groupUin=K2qmpgFfKdRSE7Mz%252FS%252F10A%253D%253D&ADUIN=757685965&ADSESSION=1605947424&ADTAG=CLIENT.QQ.5779_.0&ADPUBNO=27063&_t=1606006564903)
 
 
 
 ## 第三方库
+[返回目录](#目录)
 
 数据处理模块：[pandas](https://pandas.pydata.org/)  |  [Numpy](https://numpy.org/)		
 
@@ -31,6 +33,7 @@
 
 
 ## 仓库文件内容说明
+[返回目录](#目录)
 
 | 文件/目录                                                    | 说明                                      |
 | ------------------------------------------------------------ | ----------------------------------------- |
@@ -44,6 +47,7 @@
 
 
 ## 实验一 多源数据集成、清洗和统计
+[返回目录](#目录)
 
 **题目 ：**
 
@@ -68,6 +72,7 @@
 
 
 ## 实验二 数据统计和可视化
+[返回目录](#目录)
 
 基于**实验一**中清洗后的数据练习统计和视化操作，100个同学（样本），每个同学有11门课程的成绩（11维的向量）；那么构成了一个100x11的数据矩阵。以你擅长的语言C/C++/Java/Python/Matlab，编程计算：
 
@@ -89,6 +94,8 @@
 
 
 ## 实验三 k-means聚类算法
+[返回目录](#目录)
+
 :white_check_mark: [Code](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2003/kmeans.cpp)
 
 用C++实现k-means聚类算法，
@@ -125,6 +132,7 @@
 
 
 ## 实验四 逻辑回归二分类
+[返回目录](#目录)
 
 :white_check_mark: [Code](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2004/LogisticRegression.py)
 
@@ -145,6 +153,8 @@
 
 
 ## 小组成员
+[返回目录](#目录)
+
 **Thank you everyone !!!!!**
 
 [林昊蓝](https://github.com/HOLL4ND) HOLL4ND
