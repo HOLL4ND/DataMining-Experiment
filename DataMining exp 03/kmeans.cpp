@@ -256,13 +256,13 @@ void kMean(vector<point> &data, int k)
 
 int main()
 {
-    string fileName = "./sourceData/datakmean.txt";
+    string fileName = "./sourceData/datakmeanAddition.txt";
     ofstream outResult("./output/clustering result k 2.txt");
 
     vector<point> data;
     if (get_data(fileName, data))
     {
-        int k = 2;
+        int k = 3;
 
         kMean(data, k);
 
