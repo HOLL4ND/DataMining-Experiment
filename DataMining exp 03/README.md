@@ -45,6 +45,12 @@
 
 
 
+<div align="center">
+    	<img src="https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2003/output/k3-result.png">  
+</div>
+
+<p align="center">datakmeanAddition.txt的聚类结果</p>
+
 
 
 ## 使用说明
