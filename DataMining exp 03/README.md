@@ -10,7 +10,7 @@
 
 
 | 代码文件                                                     | 说明                                                         |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| :----------------------------------------------------------- | ------------------------------------------------------------ |
 | [kmeans.cpp](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2003/kmeans.cpp) | kmeans算法的实现                                             |
 | [show.py](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2003/show.py) | [example_x_y.png](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2003/example_x_y.png)的输出函数 |
 | [showClusteringResult.py](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2003/showClusteringResult.py) | 聚类结果可视化                                               |
@@ -34,6 +34,14 @@
 
 
 ## 聚类结果可视化
+
+
+
+<div align="center">
+    	<img src="https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2003/output/k2-result.png">  
+</div>
+
+<p align="center">datakmean.txt的聚类结果</p>
 
 
 
