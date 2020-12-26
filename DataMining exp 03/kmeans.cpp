@@ -262,7 +262,9 @@ int main()
     vector<point> data;
     if (get_data(fileName, data))
     {
-        int k = 3;
+
+        int k;
+        cin >> k;
 
         kMean(data, k);
 
