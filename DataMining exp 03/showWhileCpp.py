@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 # df = pd.read_table("./sourceData/datakmean.txt",sep=',',header=None)
 # df.columns=['x','y']
 
+
+# 使用不同的文件时，请修改此处的路径 ↓
 rawData = pd.read_table('./sourceData/datakmeanAddition.txt',sep=',',header=None)
 dataSize = rawData.shape[0]
 
