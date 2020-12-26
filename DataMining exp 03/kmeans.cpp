@@ -257,13 +257,14 @@ void kMean(vector<point> &data, int k)
 int main()
 {
     string fileName = "./sourceData/datakmeanAddition.txt";
-    ofstream outResult("./output/clustering result k 2.txt");
+    ofstream outResult("./output/clustering result k 3.txt");
 
     vector<point> data;
     if (get_data(fileName, data))
     {
 
         int k;
+        cout << "Enter K:";
         cin >> k;
 
         kMean(data, k);
