@@ -99,7 +99,7 @@
 :white_check_mark: [Code](https://github.com/HOLL4ND/DataMining-Experiment/blob/main/DataMining%20exp%2003/kmeans.cpp)
 
 用C++实现k-means聚类算法，
-1.  对实验二中的z-score归一化的成绩数据进行测试，观察聚类为2类，3类，4类，5类的结果，观察得出什么结论？
+1.  对实验二中的z-score归一化的成绩数据进行测试，观察聚类为2类，3类，4类，5类的结果，观察得出什么结论？	（最新的代码仓库已更新此问题的解）
 2.  由老师给出测试数据，进行测试，并画出可视化出散点图，类中心，类半径，并分析聚为几类合适。
 
 
