@@ -149,9 +149,9 @@ void init_cluster_centers(vector<point> &data, int k, point *Centroid)
 
 void update_clusters(vector<point> &data, int k, point *Centroid)
 {
-    int i, j, distance;
+    int i, j;
+    float distance;
     float bestMiniDist;
-    int currentCluster;
     int stillMoving = 0;
     int pointStillMoving = 0;
     for (i = 0; i < data.size(); i++)
@@ -172,7 +172,7 @@ void update_clusters(vector<point> &data, int k, point *Centroid)
 
 int recalculate_centroids(vector<point> &data, int k, point *Centroid)
 {
-    int i, j, cluster, index, isStillMoving = 0;
+    int i, j, index, isStillMoving = 0;
     float *count = new float[k];
     float *sumX = new float[k];
     float *sumY = new float[k];
@@ -187,7 +187,6 @@ int recalculate_centroids(vector<point> &data, int k, point *Centroid)
 
     for (i = 0; i < data.size(); i++)
     {
-        cluster = data[i].clusterNumber;
         index = data[i].clusterNumber - 1;
         sumX[index] += data[i].x;
         sumY[index] += data[i].y;
