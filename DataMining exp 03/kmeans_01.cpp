@@ -54,7 +54,7 @@ bool get_data(string filepath, vector<point> &p)
     }
 }
 
-void graph_state2file(ofstream &outfile, vector<point> &point)
+void point_state2file(ofstream &outfile, vector<point> &point)
 {
     outfile << "C1,C2,C3,C4,C5,C6,C7,C8,C9,Constitution,class_number" << endl;
     outfile.setf(ios::fixed);
@@ -258,14 +258,11 @@ int main()
     ofstream outResult("./output/clustering_result_Stu.txt");
 
     vector<point> scoreData;
-    int k = 3;
+    int k = 6;
     dataPoint *Centroid = new dataPoint[k];
 
     if (get_data(fileName, scoreData))
     {
-        // printVector(scoreData);
-        // init_cluster_centers(scoreData, k, Centroid);
-        // printVector(scoreData);
         kMean(scoreData, k);
     }
     else
@@ -274,21 +271,7 @@ int main()
     }
 
     printVector(scoreData);
-    // for (int j = 0; j < 2; j++)
-    // {
-    //     printPoint(Centroid[j]);
-    //     cout << endl;
-    // }
-    // for (int j = 0; j < 2; j++)
-    // {
-    //     printPoint(Centroid[j]);
-    //     cout << endl;
-    // }
-    graph_state2file(outResult, scoreData);
 
-    // printPoint(scoreData[0]);
-    // cout << endl;
-    // printPoint(scoreData[1]);
-    // cout << endl;
-    // cout << getDist_xy(scoreData[0], scoreData[1]) << endl;
+    point_state2file(outResult, scoreData);
+
 }
