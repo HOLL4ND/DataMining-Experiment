@@ -3,7 +3,7 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
-#include <math.h>
+#include <cmath>
 #include <iomanip>
 #include <fstream>
 #include <algorithm>
@@ -56,6 +56,7 @@ bool get_data(string filepath, vector<point> &p)
 
 void graph_state2file(ofstream &outfile, vector<point> &point)
 {
+    outfile << "C1,C2,C3,C4,C5,C6,C7,C8,C9,Constitution,class_number" << endl;
     outfile.setf(ios::fixed);
     for (int i = 0; i < point.size(); i++)
     {
@@ -257,7 +258,7 @@ int main()
     ofstream outResult("./output/clustering_result_Stu.txt");
 
     vector<point> scoreData;
-    int k = 2;
+    int k = 3;
     dataPoint *Centroid = new dataPoint[k];
 
     if (get_data(fileName, scoreData))

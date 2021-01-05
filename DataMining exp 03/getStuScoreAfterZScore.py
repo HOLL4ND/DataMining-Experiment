@@ -5,6 +5,6 @@ df = pd.read_csv("./output/Exp02/z-score Data.csv")
 df.drop(columns=['ID','Name','City','Gender','Height'],inplace=True)
 col = df.columns.tolist()
 for c in col:
-    print(c)
+    print(c,end=',')
 # df.to_csv("./output/Exp02/z-score_scoreOnly.csv",header=True, index=False,float_format='%.8f')
 # print(df)
