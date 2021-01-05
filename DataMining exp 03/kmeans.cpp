@@ -215,14 +215,13 @@ int recalculate_centroids(vector<point> &data, int k, point *Centroid)
     return isStillMoving;
 }
 
-void kMean(vector<point> &data, int k)
+void kMean(vector<point> &data, int k, point *Centroid)
 {
     ofstream pointState("./output/procedure.txt");
     ofstream outcentr("./output/centroid.txt");
     ofstream outFinalcentr("./output/centroid final.txt");
 
     int isStillMoving = 1, step = 0;
-    dataPoint *Centroid = new dataPoint[k];
     float *cluRadius = new float[k];
 
     init_cluster_centers(data, k, Centroid);
@@ -250,13 +249,12 @@ void kMean(vector<point> &data, int k)
         outFinalcentr << setprecision(4) << Centroid[i].x << ',' << Centroid[i].y << ',' << Centroid[i].clusterNumber << ',' << Centroid[i].radius << endl;
     }
     cout << "Total step: " << step << endl;
-    delete Centroid;
 }
 
 int main()
 {
-    string fileName = "./sourceData/datakmeanAddition.txt";
-    ofstream outResult("./output/clustering result k 3.txt");
+    string fileName = "./sourceData/datakmean.txt";
+    ofstream outResult("./output/clustering result k 2.txt");
 
     vector<point> data;
     if (get_data(fileName, data))
@@ -264,12 +262,39 @@ int main()
 
         int k;
         cout << "Enter K:";
-        cin >> k;
+        // cin >> k;
+        k = 2;
+        dataPoint *Centroid = new dataPoint[k];
 
-        kMean(data, k);
+        kMean(data, k, Centroid);
 
         outResult << "x,y,class" << endl;
         graph_state2file(outResult, data);
+
+        dataPoint test;
+        test.x = 2;
+        test.y = 6;
+
+        float dist2Cen = 32767.0;
+        float dist = 0.0;
+        int classPointIs = 0;
+        for (int j = 0; j < k; j++)
+        {
+            cout << "(2,6) to\n";
+            printPoint(Centroid[j]);
+            dist = getDist_xy(test, Centroid[j]);
+            cout << dist << endl
+                 << endl;
+            if (dist < dist2Cen)
+            {
+                dist2Cen = dist;
+                classPointIs = Centroid[j].clusterNumber;
+            }
+        }
+
+        cout << "(2,6) is class:";
+        cout << classPointIs;
+        delete Centroid;
     }
     else
     {
