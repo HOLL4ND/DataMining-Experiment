@@ -22,7 +22,9 @@ def question_1(data, count):  # 学生中家乡在Beijing的所有课程的平�
             q1.append(a)
             temp.clear()
         i += 1
-    print("Beijing的平均成绩：\n", q1)
+    print("Beijing的平均成绩")
+    for stu in q1:
+        print(stu)
 
 
 def question_3(data, count): # 比较广州和上海两地女生的平均体能测试成绩，哪个地区的更强些？

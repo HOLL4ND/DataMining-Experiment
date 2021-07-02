@@ -78,21 +78,20 @@ if __name__=='__main__':
 
     #获取课程的列名
     cLabels  = df.columns.values.tolist()[5:16]
-
     #对给dataframe中给定列名进行z-score归一化
     z_score(df,cLabels)
 
-    #输出实验结果
-    # print(df)
+    # 输出实验结果
+    print(df)
+    #保存实验结果
+    df.to_csv('./output/Exp02/z-score Data.csv',index=False)
 
-    dfScore = df.iloc[:,5:16]
+    # dfScore = df.iloc[:,5:16]
 
     #进行矩阵的转置
-    dfScore = dfScore.T
+    # dfScore = dfScore.T
     # colList = dfScore.columns.values.tolist()
 
-    print(dfScore)
+    # print(dfScore)
 
 
-    #保存实验结果
-    # df.to_csv('./output/Exp02/z-score Data.csv',index=False)

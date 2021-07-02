@@ -32,19 +32,6 @@ def gradient(X, Y, theta):    # 计算梯度    对θj求偏导
         grad[0, j] = np.sum(term) / len(X)
     return grad
 
-
-def stopCriterion(value, threshold):
-    return value > threshold
-
-
-def shuffleData(data):      # 打乱数据
-    np.random.shuffle(data)
-    cols = data.shape[1]    # 列数
-    X = data[:, 0:cols-1]
-    Y = data[:, cols-1:]
-    return X, Y
-
-
 def descent(data, theta, batchSize, thresh, alpha):       # 梯度下降函数
     init_time = time.time()
     i = 0   # 记录迭代次数
@@ -62,6 +49,16 @@ def descent(data, theta, batchSize, thresh, alpha):       # 梯度下降函数
             break
     return theta, i-1, costs, grad, time.time()-init_time
 
+def stopCriterion(value, threshold):
+    return value > threshold
+
+
+def shuffleData(data):      # 打乱数据
+    np.random.shuffle(data)
+    cols = data.shape[1]    # 列数
+    X = data[:, 0:cols-1]
+    Y = data[:, cols-1:]
+    return X, Y
 
 def runExpe(data, theta, batchSize, thresh, alpha):   # 逻辑回归
     theta, iter, costs, grad, dur = descent(data, theta, batchSize, thresh, alpha)    # 梯度下降
